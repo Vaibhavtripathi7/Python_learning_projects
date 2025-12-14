@@ -35,9 +35,8 @@ def View():
                 data = line.rstrip()
                 user, passw = data.split("|") # gives a list or object
                 f= Fernet(key)
-                print()
                 # print(f"User:{user} and Password : {Fernet(key).decrypt(passw)}")
-                print("Name and Password: ",user, f.decrypt(passw))
+                print(f"Username : {user} and Password: {(f.decrypt(passw.encode())).decode()}")
     except:
         print("NO password saved! till now")
     # TRY BLOCK KEEPS WORKING EVEN AFTER A ERROR OCCURRED
@@ -53,16 +52,7 @@ while True:
         Add()
 
     elif (mode.lower() == 'view'):
-        with open('password.txt', 'r') as f:
-            for line in f: # or for line in f.readlines():
-            #print(f"{line.rstrip()}") # to remove \n effect or line 
-                data = line.rstrip()
-                user, passw = data.split("|") # gives a list or object
-                f= Fernet(key)
-                print()
-                # print(f"User:{user} and Password : {Fernet(key).decrypt(passw)}")
-                print("Name and Password: ",user, (f.decrypt(passw.encode())).decode())        
-    
+        View()
     else:
         print("Invalid mode")
         continue
