@@ -1,4 +1,22 @@
-pwd = input("What is the master password? :")
+from cryptography.fernet import Fernet 
+
+
+def generate_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)
+
+def load_key():
+    file = open("key.key", "r")
+    key = file.read()
+    return Fernet(key) # it should be in bytes now ! -- so now error! 
+
+generate_key() # only once! 
+
+master_pwd = input("What is the master password? :")
+print(type(master_pwd.encode()))
+
+key = load_key() + master_pwd.encode()
 
 
 def Add():
@@ -26,7 +44,7 @@ while True:
 
     if (mode.lower() == 'q'):
         break
-
+ 
     elif (mode.lower() == 'add'):
         Add()
 
