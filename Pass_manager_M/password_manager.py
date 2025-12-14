@@ -14,7 +14,7 @@ def load_key():
 
 # generate_key() # only once! 
 
-master_pwd = input("What is the master password? :")
+# master_pwd = input("What is the master password? :") # currently not using this! 
 # print(type(master_pwd.encode()))
 
 key = (load_key())
