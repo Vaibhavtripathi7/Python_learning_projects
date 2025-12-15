@@ -1,7 +1,7 @@
 import random
 
 NO_OF_PLAYERS = int(input("Please enter no of players: "))
-scores = []*NO_OF_PLAYERS
+scores = [0]*NO_OF_PLAYERS
 Condition = True
 ROUND_NO = 1 
 
@@ -28,6 +28,7 @@ while Condition:
         print(f"Choose for Player{player + 1}")
         no_of_times = int(input("Please enter no of times: "))
         player_every_roll_score(no_of_times, player)
+
         player = player + 1 
     ROUND_NO += 1
 
