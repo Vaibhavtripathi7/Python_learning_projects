@@ -34,3 +34,5 @@ for word in words:
 
 for word in words: 
     story.replace(word, answer[word])
+
+print(story)
