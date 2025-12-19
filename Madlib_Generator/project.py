@@ -25,4 +25,8 @@ for index, char in enumerate(story):
         words.add(word)
         start_of_word = -1
 
-    
+answers = {}
+
+for word in words: 
+    answer = input("enter the word for: "+ word + ":")
+    answers[word] =answer # key : value pair -- dict
