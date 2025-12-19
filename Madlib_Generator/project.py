@@ -33,6 +33,6 @@ for word in words:
 
 
 for word in words: 
-    story.replace(word, answer[word])
+    story = story.replace(word, answer[word]) # replace creates a new variable !
 
 print(story)
