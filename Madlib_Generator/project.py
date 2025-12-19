@@ -30,3 +30,7 @@ answers = {}
 for word in words: 
     answer = input("enter the word for: "+ word + ":")
     answers[word] =answer # key : value pair -- dict
+
+
+for word in words: 
+    story.replace(word, answer[word])
