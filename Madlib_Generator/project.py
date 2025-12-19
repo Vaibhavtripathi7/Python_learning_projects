@@ -7,4 +7,22 @@ with open("story.txt", "r") as f:
     story = f.read() # it does not a local var -- not like functions!
 
 
-print(story) # it gives all the content from file !
+# print(story) # it gives all the content from file !
+# print(type(story))
+# word = list()
+words = set() 
+start_of_word = -1
+
+target_start = "<"
+target_end = ">"
+
+for index, char in enumerate(story):
+    if char == target_start:
+        start_of_word = i
+    
+    if char == target_end and target_start:
+        word = story[start_of_word: i + 1] # slicing method
+        words.add(word)
+        start_of_word = -1
+
+    
