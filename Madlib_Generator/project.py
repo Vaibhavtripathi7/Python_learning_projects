@@ -18,10 +18,10 @@ target_end = ">"
 
 for index, char in enumerate(story):
     if char == target_start:
-        start_of_word = i
+        start_of_word = index
     
-    if char == target_end and target_start:
-        word = story[start_of_word: i + 1] # slicing method
+    if char == target_end and start_of_word != -1:
+        word = story[start_of_word: index + 1] # slicing method
         words.add(word)
         start_of_word = -1
 
@@ -29,10 +29,10 @@ answers = {}
 
 for word in words: 
     answer = input("enter the word for: "+ word + ":")
-    answers[word] =answer # key : value pair -- dict
+    answers[word] = answer # key : value pair -- dict
 
 
 for word in words: 
-    story = story.replace(word, answer[word]) # replace creates a new variable !
+    story = story.replace(word, answers[word]) # replace creates a new variable !
 
 print(story)
