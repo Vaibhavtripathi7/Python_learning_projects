@@ -1,4 +1,5 @@
 import random 
+import time
 
 operators = ["+","-","*"]
 MIN_OPERAND = 3
@@ -23,6 +24,8 @@ def generate_problems():
 
 # generate_problems()
 
+start_time = time.time()
+
 for i in range(TOTAL_PROBLEMS):
     eqn, ans = generate_problems()
     print(f"The question is: {eqn}")
@@ -32,3 +35,7 @@ for i in range(TOTAL_PROBLEMS):
     else:
         print(f"AHH !! wrong answer, correct answer was! {ans}")
         continue
+
+end_time = time.time()
+total_time = end_time - start_time
+print("TIme takes was: ", total_time)
